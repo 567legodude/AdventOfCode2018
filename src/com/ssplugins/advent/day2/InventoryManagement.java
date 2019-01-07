@@ -12,7 +12,7 @@ public class InventoryManagement {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(InventoryManagement.class);
-        InventoryManagement im = new InventoryManagement(input.orElseThrow(Util.noInput()));
+        InventoryManagement im = new InventoryManagement(input.orElseThrow(Input.noInput()));
         im.part2();
     }
     

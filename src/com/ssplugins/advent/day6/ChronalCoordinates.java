@@ -9,11 +9,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("Duplicates")
 public class ChronalCoordinates {
     
     public static void main(String[] args) {
                 Optional<List<String>> input = Input.get(ChronalCoordinates.class);
-                ChronalCoordinates cc = new ChronalCoordinates(input.orElseThrow(Util.noInput()));
+                ChronalCoordinates cc = new ChronalCoordinates(input.orElseThrow(Input.noInput()));
                 cc.part2();
     }
     

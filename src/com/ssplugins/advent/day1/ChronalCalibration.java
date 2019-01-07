@@ -12,7 +12,7 @@ public class ChronalCalibration {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(ChronalCalibration.class);
-        ChronalCalibration cc = new ChronalCalibration(input.orElseThrow(Util.noInput()));
+        ChronalCalibration cc = new ChronalCalibration(input.orElseThrow(Input.noInput()));
         cc.part2();
     }
     

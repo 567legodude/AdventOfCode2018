@@ -11,7 +11,7 @@ public class ReposeRecord {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(ReposeRecord.class);
-        ReposeRecord rr = new ReposeRecord(input.orElseThrow(Util.noInput()));
+        ReposeRecord rr = new ReposeRecord(input.orElseThrow(Input.noInput()));
 //        rr.part1();
         rr.part2();
     }

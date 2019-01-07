@@ -4,14 +4,13 @@ import com.ssplugins.advent.util.Input;
 import com.ssplugins.advent.util.Util;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public class MemoryManeuver {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(MemoryManeuver.class);
-        MemoryManeuver mm = new MemoryManeuver(input.orElseThrow(Util.noInput()));
+        MemoryManeuver mm = new MemoryManeuver(input.orElseThrow(Input.noInput()));
         mm.part2();
     }
     
