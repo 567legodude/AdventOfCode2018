@@ -5,7 +5,6 @@ import com.ssplugins.advent.util.Util;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,7 +12,7 @@ public class Slicing {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(Slicing.class);
-        Slicing slicing = new Slicing(input.orElseThrow(Util.noInput()));
+        Slicing slicing = new Slicing(input.orElseThrow(Input.noInput()));
         slicing.part2();
     }
     
@@ -23,18 +22,10 @@ public class Slicing {
         this.input = input;
     }
     
-    private <T> void compareItems(List<T> list, BiConsumer<T, T> consumer) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            for (int j = i + 1; j < list.size(); j++) {
-                consumer.accept(list.get(i), list.get(j));
-            }
-        }
-    }
-    
     public void part1() {
         List<Claim> claims = input.stream().map(Claim::new).collect(Collectors.toList());
         Boolean[][] fabric = new Boolean[1000][1000];
-        compareItems(claims, (claim, claim2) -> {
+        Util.compareEach(claims, (claim, claim2) -> {
             if (claim.intersects(claim2)) {
                 Claim.overlap(claim.toBounds(), claim2.toBounds()).overlay(fabric);
             }

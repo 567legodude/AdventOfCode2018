@@ -13,7 +13,7 @@ public class AlchemicalReduction {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(AlchemicalReduction.class);
-        AlchemicalReduction ar = new AlchemicalReduction(input.orElseThrow(Util.noInput()));
+        AlchemicalReduction ar = new AlchemicalReduction(input.orElseThrow(Input.noInput()));
         ar.part2();
     }
     

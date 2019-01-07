@@ -14,7 +14,7 @@ public class SumParts {
     
     public static void main(String[] args) {
         Optional<List<String>> input = Input.get(SumParts.class);
-        SumParts sp = new SumParts(input.orElseThrow(Util.noInput()));
+        SumParts sp = new SumParts(input.orElseThrow(Input.noInput()));
         sp.part2();
     }
     
